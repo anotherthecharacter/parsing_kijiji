@@ -1,0 +1,211 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.6 (Ubuntu 14.6-0ubuntu0.22.04.1)
+-- Dumped by pg_dump version 14.6 (Ubuntu 14.6-0ubuntu0.22.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: ad; Type: TABLE; Schema: public; Owner: anotherthecharacter
+--
+
+CREATE TABLE public.ad (
+    id integer NOT NULL,
+    page integer,
+    image character varying,
+    date character varying,
+    currency character varying,
+    price character varying
+);
+
+
+ALTER TABLE public.ad OWNER TO anotherthecharacter;
+
+--
+-- Name: ad_id_seq; Type: SEQUENCE; Schema: public; Owner: anotherthecharacter
+--
+
+CREATE SEQUENCE public.ad_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.ad_id_seq OWNER TO anotherthecharacter;
+
+--
+-- Name: ad_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: anotherthecharacter
+--
+
+ALTER SEQUENCE public.ad_id_seq OWNED BY public.ad.id;
+
+
+--
+-- Name: ad id; Type: DEFAULT; Schema: public; Owner: anotherthecharacter
+--
+
+ALTER TABLE ONLY public.ad ALTER COLUMN id SET DEFAULT nextval('public.ad_id_seq'::regclass);
+
+
+--
+-- Data for Name: ad; Type: TABLE DATA; Schema: public; Owner: anotherthecharacter
+--
+
+COPY public.ad (id, page, image, date, currency, price) FROM stdin;
+1	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/98/98a2fb74-35ce-4095-a7bd-45e71d9d8b02?rule=kijijica-960-jpg	17-01-2023	$	1,529
+2	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/42/4277165b-46e6-436f-8837-ffd9bd49fcce?rule=kijijica-960-jpg	30-01-2023	$	2,195
+3	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/cf/cf3eb47b-9748-40a4-9f66-4cd2e80ff11a?rule=kijijica-640-jpg	25-01-2023	$	2,850
+4	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/df/df8166bf-463a-46c6-ac45-ece4d93fcba6?rule=kijijica-960-jpg	19-01-2023	$	3,000
+5	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/64/64cdb0c4-299e-48e0-a5bd-2a844944f318?rule=kijijica-640-jpg	30-01-2023	$	3,300
+6	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/de/debfdc58-e034-4a33-8571-e4dd8f53caec?rule=kijijica-640-jpg	30-01-2023	$	2,350
+7	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/17/17fff375-79d9-4fce-9287-0ec1f7c40542?rule=kijijica-640-jpg	30-01-2023	$	2,100
+8	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/17/175aabda-611a-4c6b-afcf-5d552b8c04a2?rule=kijijica-640-jpg	30-01-2023	$	2,245
+9	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/1e/1ecbe439-594f-4257-acd6-b1bf82ffab7c?rule=kijijica-640-jpg	30-01-2023	$	2,590
+10	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/39/3979ea5d-cb41-41e9-a2a5-d6994723b054?rule=kijijica-640-jpg	30-01-2023	$	2,590
+11	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/42/42550641-95f5-4603-b3b4-027a2b7b7c25?rule=kijijica-640-jpg	30-01-2023	$	2,245
+12	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/4f/4f8bbc6c-ef5b-4a45-ab37-92dd87378fbc?rule=kijijica-640-jpg	30-01-2023	$	2,100
+13	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/50/507fd400-b490-44d6-bcd4-25ddf3694515?rule=kijijica-640-jpg	30-01-2023	$	1,946
+14	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/53/535f9a88-ba3b-4ccc-929b-807700ad7d95?rule=kijijica-640-jpg	30-01-2023	$	2,526
+15	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c6/c604a6d0-5995-484b-bfbb-480adbd9ff6b?rule=kijijica-640-jpg	30-01-2023	$	2,179
+16	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/cb/cba4481e-5485-4644-9a7e-3607f9599244?rule=kijijica-640-jpg	30-01-2023	$	3,150
+17	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b3/b3dbf774-46b1-41db-b451-66229357e99e?rule=kijijica-640-jpg	30-01-2023	$	1,885
+18	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/69/6934964d-d8f6-4ece-9c7c-ddbfd65ce68e?rule=kijijica-640-jpg	30-01-2023	$	2,145
+19	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/e0/e025c635-7fc7-4db6-93b9-2042d8958c25?rule=kijijica-640-jpg	30-01-2023	$	1,609
+20	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/58/5891477e-b374-4743-851f-4dde6a1e5aee?rule=kijijica-640-jpg	30-01-2023	$	2,001
+21	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f6/f6940a54-582e-4555-aded-247357420e3a?rule=kijijica-640-jpg	30-01-2023	$	1,899
+22	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/87/870f8530-6961-4145-b975-b910eabc6023?rule=kijijica-640-jpg	30-01-2023	$	2,141
+23	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/3a/3a0389e3-afbc-4fbd-8836-723385a71b11?rule=kijijica-640-jpg	30-01-2023	$	1,821
+24	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b4/b483f24f-638a-4367-877e-6cfdcb564650?rule=kijijica-640-jpg	30-01-2023	$	1,920
+25	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/cc/cc835b32-fb7a-4e5f-9b9a-532a3e8ffff3?rule=kijijica-640-jpg	30-01-2023	$	2,254
+26	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/87/87eb0731-3fcc-4d38-8fbb-ec425924e243?rule=kijijica-640-jpg	30-01-2023	$	2,186
+27	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/5b/5b3a5784-4d13-4795-bdf8-a91038b2f784?rule=kijijica-640-jpg	30-01-2023	$	1,936
+28	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b1/b1b0b332-8465-4fba-bafd-052b64b4b044?rule=kijijica-640-jpg	30-01-2023	$	2,612
+29	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/0f/0f2da1c4-2988-44d1-9f92-127896a8763e?rule=kijijica-960-jpg	30-01-2023	$	2,074
+30	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/8e/8e3e4e55-83e1-4e03-b2f9-89c86b0bdcb9?rule=kijijica-960-jpg	30-01-2023	$	2,059
+31	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/fa/fa327939-b06b-4983-a41f-61b2f41d9fe8?rule=kijijica-960-jpg	30-01-2023	$	1,755
+32	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/8a/8a125587-96a7-4e22-8e28-3012ee68dd13?rule=kijijica-960-jpg	30-01-2023	$	1,994
+33	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f5/f5dd4690-826c-4f65-bba0-ea782f357cfd?rule=kijijica-960-jpg	30-01-2023	$	1,619
+34	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/3d/3d7a37db-b24b-43ea-b02d-667414bd13df?rule=kijijica-960-jpg	30-01-2023	$	2,375
+35	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/78/789a81da-ed02-48c9-81b8-c5400922617c?rule=kijijica-640-jpg	30-01-2023	$	1,000
+36	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/f6/f6470361-da0d-4be9-9caa-8d1b317f6e0a?rule=kijijica-640-jpg	30-01-2023	$	2,500
+37	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/6b/6b30a537-770b-4cf3-9c5b-b02548e5a8de?rule=kijijica-640-jpg	30-01-2023	$	2,850
+38	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/31/31a9bcd3-c910-45d1-8692-b2335ba62589?rule=kijijica-640-jpg	30-01-2023	$	1,800
+39	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/c0/c0e72881-4aa0-43ae-a826-863d1d3283c4?rule=kijijica-640-jpg	30-01-2023	$	3,000
+40	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/3c/3ccb4ab3-a666-4939-b5ba-f06551088f1c?rule=kijijica-640-jpg	30-01-2023	$	2,250
+41	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/0b/0b663040-3480-4792-bcb4-1a6c69932201?rule=kijijica-640-jpg	30-01-2023	$	3,395
+42	1	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/c8/c8c94dea-2ebc-4018-abfa-4b7993b7a07d?rule=kijijica-640-jpg	30-01-2023	$	2,750
+43	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ff/ff264938-b484-463a-9ee5-80d0958a1ca9?rule=kijijica-640-jpg	30-01-2023	$	2,258
+44	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/4c/4c426393-c746-4767-80fe-a31ee28e2318?rule=kijijica-640-jpg	30-01-2023	$	1,829
+45	1	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c2/c2797277-3f9e-4ea8-bd39-aca2752a3c03?rule=kijijica-640-jpg	30-01-2023	$	1,847
+46	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/06/06a726de-3f13-415c-84a4-55047b7b29fc?rule=kijijica-640-jpg	18-01-2023	\N	Please Contact
+47	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b4/b494cb5f-00ad-440a-839b-c96e6477a8c4?rule=kijijica-640-jpg	27-01-2023	$	3,000
+48	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b0/b00f8f6d-b9d9-42bc-8f3d-29a1d16fb44f?rule=kijijica-960-jpg	24-01-2023	$	2,324
+49	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/42/4277165b-46e6-436f-8837-ffd9bd49fcce?rule=kijijica-960-jpg	30-01-2023	$	2,195
+50	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/cc/cce806b9-4866-4d59-a4bd-309423526841?rule=kijijica-640-jpg	30-01-2023	$	2,595
+51	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/c8/c8c94dea-2ebc-4018-abfa-4b7993b7a07d?rule=kijijica-640-jpg	30-01-2023	$	2,750
+52	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ff/ff264938-b484-463a-9ee5-80d0958a1ca9?rule=kijijica-640-jpg	30-01-2023	$	2,258
+53	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/4c/4c426393-c746-4767-80fe-a31ee28e2318?rule=kijijica-640-jpg	30-01-2023	$	1,829
+54	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c2/c2797277-3f9e-4ea8-bd39-aca2752a3c03?rule=kijijica-640-jpg	30-01-2023	$	1,847
+55	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/9c/9cc6cbd5-65f9-41ba-9378-88b78a14adcb?rule=kijijica-640-jpg	30-01-2023	$	2,180
+56	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/cf/cfba57e4-e873-405d-b0ac-03541837c262?rule=kijijica-640-jpg	30-01-2023	$	2,350
+57	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/da/da540d2c-f34d-418f-844e-2b1addb9cfe4?rule=kijijica-960-jpg	30-01-2023	$	2,207
+58	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/cc/cc9242ff-7d57-4250-8fdd-2b490dc0a56f?rule=kijijica-640-jpg	30-01-2023	$	1,650
+59	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/21/2174d517-f0ad-4f4e-b48f-446d0d3618bb?rule=kijijica-640-jpg	30-01-2023	$	1,550
+60	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b7/b71c49db-f08a-40a1-a7fe-169ad8448695?rule=kijijica-640-jpg	30-01-2023	$	1,950
+61	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/15/1582ee3b-5a91-48e8-ab8a-443bf15a2fcf?rule=kijijica-640-jpg	30-01-2023	$	2,599
+62	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ae/ae38f9db-0eeb-4039-8652-eff2ccc8ee2b?rule=kijijica-640-jpg	30-01-2023	$	2,399
+63	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/47/4755c260-e61e-480f-81d8-3f6d444cbf40?rule=kijijica-640-jpg	30-01-2023	$	2,049
+64	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c6/c6416d18-1d15-4fba-b075-15dd07c0a07c?rule=kijijica-640-jpg	30-01-2023	$	2,549
+65	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/e8/e8e7ea66-2b03-430b-a470-562a87341835?rule=kijijica-640-jpg	30-01-2023	$	2,249
+66	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f3/f3e3c0be-17dd-44a2-8567-fbad077a3859?rule=kijijica-640-jpg	30-01-2023	$	2,149
+67	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ab/aba80309-89d4-486c-a8e0-8445b27ebe9c?rule=kijijica-640-jpg	30-01-2023	$	2,399
+68	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/c6/c692ae83-b7c4-4eb8-9360-91ed14a1a39b?rule=kijijica-640-jpg	30-01-2023	$	2,295
+69	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/ce/ce0ad9de-8496-4bc7-a710-cdec33f95ca2?rule=kijijica-640-jpg	30-01-2023	$	1,700
+70	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/db/dbf83b54-a3f8-4040-937e-7f6a32b9c901?rule=kijijica-640-jpg	30-01-2023	\N	Please Contact
+71	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/8c/8cff2f9e-ee7f-479d-9546-95e4e611777b?rule=kijijica-640-jpg	30-01-2023	$	2,750
+72	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/d6/d6af6908-f847-47e9-a09e-f985a670ec07?rule=kijijica-640-jpg	30-01-2023	$	1,650
+73	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/1f/1f39811f-e213-44d1-b249-43a7de8e0926?rule=kijijica-640-jpg	30-01-2023	\N	Please Contact
+74	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d4/d453f68a-2ef5-4705-beae-d7df63bfe961?rule=kijijica-640-jpg	30-01-2023	$	1,500
+75	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/2d/2d148aea-d482-4b43-a582-30d251c4ce45?rule=kijijica-640-jpg	30-01-2023	$	2,900
+76	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d9/d90b5d66-0a24-4f46-a9dc-f3471ed54173?rule=kijijica-640-jpg	30-01-2023	$	2,800
+77	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/14/14ecd34d-8925-4330-b2b0-9c964ee67b41?rule=kijijica-640-jpg	30-01-2023	$	2,215
+78	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/74/74820e56-7fe5-4219-b339-3fc69092d8a9?rule=kijijica-640-jpg	30-01-2023	$	2,900
+79	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d0/d06212f5-aca7-4eb1-9eee-5f1303568385?rule=kijijica-640-jpg	30-01-2023	$	2,000
+80	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/a7/a7548649-2108-4476-b0df-2c30573d5b1c?rule=kijijica-640-jpg	30-01-2023	\N	Please Contact
+81	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d5/d5934e18-8b2e-47b8-8e8a-6fb4c0fb9d27?rule=kijijica-640-jpg	30-01-2023	\N	Please Contact
+82	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/60/6003a1b3-b036-43ad-b54e-56baad5ba6f1?rule=kijijica-640-jpg	30-01-2023	$	3,295
+83	2	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/d0/d0e6b62a-4e02-451b-b5a4-6ec69140fc7d?rule=kijijica-640-jpg	30-01-2023	$	3,150
+84	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ca/ca2db722-02cd-4889-aa2b-344c780a5cbf?rule=kijijica-960-jpg	30-01-2023	$	1,729
+85	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/7b/7bdf6b63-61b8-4b68-9fd0-3d8dc5ff02d0?rule=kijijica-960-jpg	30-01-2023	$	1,974
+86	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/a8/a816665e-118e-4990-b903-f91f4180346d?rule=kijijica-960-jpg	30-01-2023	$	1,649
+87	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/86/8630c6a6-db66-4537-9bdb-99093b2431a5?rule=kijijica-960-jpg	30-01-2023	$	1,899
+88	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/86/86bc957f-0753-4637-b887-70065a9d1e4a?rule=kijijica-960-jpg	30-01-2023	$	2,599
+89	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/08/0895daa0-c436-4969-98ba-4988b6d384c2?rule=kijijica-960-jpg	30-01-2023	$	2,017
+90	2	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f5/f5101a80-6062-489f-99b3-7ac68f8c781d?rule=kijijica-960-jpg	30-01-2023	$	1,999
+91	3	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/77/775698cd-f508-4159-b4cf-f630a0c7d3c8?rule=kijijica-640-jpg	29-01-2023	$	2,695
+92	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b0/b01aa12c-0d92-49b6-a1f8-d81e2d685fdb?rule=kijijica-960-jpg	20-01-2023	$	1,679
+93	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/1a/1aa1bbbe-ff07-4124-9805-7740c60dfff2?rule=kijijica-640-jpg	29-01-2023	$	2,550
+94	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/9d/9d139811-1aca-41eb-a7e5-f68e18ba9155?rule=kijijica-640-jpg	24-01-2023	$	2,152
+95	3	https://media.kijiji.ca/api/v1/ca-prod-fsbo-ads/images/cf/cf3eb47b-9748-40a4-9f66-4cd2e80ff11a?rule=kijijica-640-jpg	25-01-2023	$	2,850
+96	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f5/f5101a80-6062-489f-99b3-7ac68f8c781d?rule=kijijica-960-jpg	30-01-2023	$	1,999
+97	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/f8/f82b724a-578a-4a9f-8e73-2a6721c05260?rule=kijijica-960-jpg	30-01-2023	$	1,965
+98	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/35/3590cb98-f7af-40df-af57-9ab50082b24f?rule=kijijica-960-jpg	30-01-2023	$	2,197
+99	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/b6/b6fa5b08-8eeb-41b4-bff5-c0f6473dcac3?rule=kijijica-960-jpg	30-01-2023	$	2,468
+100	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/15/15ef8af9-41ca-4b0c-9fff-33910943acc2?rule=kijijica-960-jpg	30-01-2023	$	2,195
+101	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/47/479499b2-357a-4d28-9dc7-f4acd84c30e2?rule=kijijica-640-jpg	30-01-2023	$	1,249
+102	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ad/ad34679a-65f3-40a5-952d-a08e04107a82?rule=kijijica-960-jpg	30-01-2023	$	2,800
+103	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/52/52f824c8-bf79-4846-a9ea-f56ed2c6c278?rule=kijijica-960-jpg	30-01-2023	$	1,955
+104	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/86/861ec331-fa75-4dcd-b058-f7011873308e?rule=kijijica-960-jpg	30-01-2023	$	2,331
+105	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/0c/0c2a08d3-b4d7-4792-a929-d01c962b80c3?rule=kijijica-960-jpg	30-01-2023	$	1,956
+106	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/8e/8e4cd83f-68b2-4f68-a3d1-88c1c680319e?rule=kijijica-960-jpg	30-01-2023	$	2,499
+107	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/9f/9f94e07d-2aa0-48ca-946e-2467e8bd49e9?rule=kijijica-960-jpg	30-01-2023	$	2,088
+108	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/1e/1e65024e-7035-410d-8fa6-64eb8dd84c12?rule=kijijica-960-jpg	30-01-2023	$	1,699
+109	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/00/002ad1d3-d9c6-4d3a-bceb-6ffde50f1397?rule=kijijica-960-jpg	30-01-2023	$	2,417
+110	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/c0/c09ae1e8-d76c-44ca-8d20-4996155908c6?rule=kijijica-960-jpg	30-01-2023	$	2,228
+111	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/e7/e74a4dd7-c9e0-44aa-91cd-e61c1bdbb9ea?rule=kijijica-960-jpg	30-01-2023	$	2,999
+112	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/2b/2b3ce5a1-7fab-4699-b7cd-945a3a6eadf2?rule=kijijica-960-jpg	30-01-2023	$	2,129
+113	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/1d/1d408634-6a6a-4bd5-9619-05883758f986?rule=kijijica-960-jpg	30-01-2023	$	2,569
+114	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/57/57705bbf-93d9-447e-9704-41b80a09bc61?rule=kijijica-960-jpg	30-01-2023	$	2,684
+115	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/93/93e91fd1-0b96-49d6-ac28-f59ebda8ba36?rule=kijijica-960-jpg	30-01-2023	$	3,009
+116	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/13/13098b27-1e2e-4587-a467-7d2ba86d5d1d?rule=kijijica-960-jpg	30-01-2023	$	2,099
+117	3	https://media.kijiji.ca/api/v1/ca-prod-dealer-ads/images/ca/ca561e48-2d28-43d0-a778-a8e426760c53?rule=kijijica-640-jpg	30-01-2023	$	2,599
+\.
+
+
+--
+-- Name: ad_id_seq; Type: SEQUENCE SET; Schema: public; Owner: anotherthecharacter
+--
+
+SELECT pg_catalog.setval('public.ad_id_seq', 117, true);
+
+
+--
+-- Name: ad ad_pkey; Type: CONSTRAINT; Schema: public; Owner: anotherthecharacter
+--
+
+ALTER TABLE ONLY public.ad
+    ADD CONSTRAINT ad_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

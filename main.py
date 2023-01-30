@@ -1,12 +1,11 @@
 import requests
 
 from bs4 import BeautifulSoup as BS
+from models import Ad
+from alchemy import session
 
 
 class Parsing():
-    """
-    ...
-    """
 
     def __init__(self, url: str):
         self.url = url
@@ -128,50 +127,43 @@ class Parsing():
         else:
             if currency_and_price == 'Please Contact':
                 return {'currency': None, 'price': 'Please Contact'}
-            else:
-                return {'currency': currency_and_price[0], 'price': currency_and_price[1:]}
+            
+            return {'currency': currency_and_price[0], 'price': currency_and_price[1:]}
 
 
-    def info(self, soup: BS) -> dict:
+    def ads(self, soup: BS, number: int):
         """
-        Принимает суп объявления.
-        Возвращает необходимые данные в виде словаря.
+        Принимает суп страницы и её номер,
+        записывает данные в базу.
         """
-        image = self.image_normalize(soup)
-        date = self.date_normalize(soup)
-        currency_and_price = self.currency_and_price_normalize(soup)
-        currency = currency_and_price.get('currency')
-        price = currency_and_price.get('price')
-
-        return {'image': image, 'date': date, 'currency': currency, 'price': price}
-
-
-    def ads(self, soup: BS) -> list:
-        """
-        Принимает суп страницы, ищет объявления.
-        """
-        result = []
-
         for ad in soup.find_all('div', {'class': 'info'}):
             uri = ad.find('a', {'class': 'title'}).get('href')
-            print(uri)
             soup = self.soup(self.url + uri)
-            info = self.info(soup)
-            print(info)
-            result.append(info)
-
-        return result
+            image = self.image_normalize(soup)
+            date = self.date_normalize(soup)
+            currency_and_price = self.currency_and_price_normalize(soup)
+            currency = currency_and_price.get('currency')
+            price = currency_and_price.get('price')
+            data = Ad(page=number, image=image, date=date, currency=currency, price=price)
+            session.add(data)
+            session.commit()
 
 
     def parse(self):
         """
-        ...
+        Обновляет базу данных.
         """
+        ads = session.query(Ad).all()
+
+        for ad in ads:
+            session.delete(ad)
+        
+        session.commit()
+
         for number in range(1, self.last_page+1):
-            print(f'Page {number}\n')
             url = self.url + self.page(number)
             soup = self.soup(url)
-            self.ads(soup)
+            self.ads(soup, number)
 
 
 kijiji = Parsing('https://www.kijiji.ca')
